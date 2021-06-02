@@ -1,3 +1,5 @@
+import http from "http";
+import socket from "socket.io";
 import express from 'express';
 import config from './config';
 import dotenv from 'dotenv';
@@ -29,6 +31,8 @@ app.use(bodyParser())
 
 
 app.use("/uploads" ,express.static(path.join(__dirname,"uploads")))
+
+app.use(express.static(path.join(__dirname,"/public")))
 
 app.use(cors())
 
@@ -71,10 +75,22 @@ app.use((err ,req ,res ,next)=>{
     res.status(500).send({message : err.message})
 })
 
-app.listen(port,()=>{
-    console.log(`Server started at http://localhost:${port}`);
+const httpServer =http.Server(app)
+const io = socket(httpServer)
+
+
+io.on("connection", socket=>{
+   socket.on("chat" , message=>{
+       console.log(message);
+
+       io.emit("chat " , message)
+       
+       console.log("done");
+   })
 })
 
-if(process.env.NODE_ENV==="production"){
-    app.use(express.static("frontend/build"))
-}
+
+
+httpServer.listen(port,()=>{
+    console.log(`Server started at http://localhost:${port}`);
+})

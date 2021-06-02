@@ -21,9 +21,13 @@ export default function Products(props) {
   const mimeType = product.image.contentType
 
   return <div className="product">
-
+    
     <Link to={ '/Products/' + product._id } >
+      <div className="product-image">
+
         <img src={`data:${mimeType};base64,${img}`} alt=""/>
+
+      </div>
     </Link>
     <div className="product-details">
       <Link to={ '/Products/' + product._id } >

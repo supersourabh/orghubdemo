@@ -274,7 +274,7 @@ body{
 
 
 img{
-  height: 25rem;
+  max-height: 25rem;
   width: 25rem;
   padding: auto;
   box-shadow: 1px 1px 12px #a79d9dc4,

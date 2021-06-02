@@ -15,10 +15,9 @@ export default function OrderHistoryScreen(props) {
     const dispatch = useDispatch();
 
     useEffect(() => {
+
         dispatch(listOrderMine())
-        return () => {
-            
-        }
+        
     }, [dispatch])
 
 
@@ -47,7 +46,7 @@ export default function OrderHistoryScreen(props) {
                                     <td>{order._id}</td>
                                     <td>{order.createdAt.substring(0 ,10)} {"and "}{order.createdAt.substring(11, 19)}</td>
                                     <td>{order.totalPrice.toFixed(2)}</td>
-                                    <td>{order.isPaid ? <b> Date : {order.paidAt.substring(0 ,10)}{order.paidAt.substring(11, 19)}</b> : "Not paid"}</td>
+                                    <td>{order.isPaid ? <b> Date : {order.paidAt.substring(0 ,10)} & {order.paidAt.substring(11, 19)}</b> : "Not paid"}</td>
                                     <td>{order.isdelivered ? order.deliveredAt : "Yet to be"}</td>
                                     <td>
                                         <button type="button" className="buttonEdit"onClick={()=>{props.history.push(`/orders/${order._id}`)}}><Details/></button>

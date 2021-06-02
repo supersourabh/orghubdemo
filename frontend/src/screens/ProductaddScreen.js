@@ -161,9 +161,9 @@ function ProductaddScreen(props){
                 </li>
                 <li>
                     <label htmlFor="file">
-                        Product-Image (upto 500kb): 
+                        Product-Image (upto 500kb and must have 898*898 px): 
                     </label>
-                    <input type="file" name="file" id="file" accept=".jpg"  onChange={(e) =>setFile(e.target.files[0])}>
+                    <input type="file" name="file" id="file" accept="image/*"  onChange={(e) =>setFile(e.target.files[0])}>
 
                     </input>
                 </li>
@@ -179,9 +179,14 @@ function ProductaddScreen(props){
                     <label htmlFor="catagory">
                         Catagory :
                     </label>
-                    <input type="text" name="catagory" id="catagory" value={catagory} onChange={(e) =>setCatagory(e.target.value)}>
+                    
+                    <select value={catagory} onChange={(e)=>setCatagory(e.target.value)}>
+                        <option selected value="Vegitable">Vegitable</option>
+                        <option value="Fruits">Fruits</option>
+                        <option value="Spices">Spices</option>
+                    </select>
 
-                    </input>
+                   
                 </li>
                 <li>
                     <label htmlFor="countInStock">
@@ -211,6 +216,9 @@ function ProductaddScreen(props){
     }
 
         <div className="product-list admin">
+
+        <button className=" button" id="addProduct" onClick={()=>openModal({})}>Add-Product</button>
+
             <table className='table'>
                 <thead>
                     <tr>
@@ -256,7 +264,6 @@ function ProductaddScreen(props){
            
                
             </table>
-            <button className=" button" id="addProduct" onClick={()=>openModal({})}>Add-Product</button>
 
         </div>
            

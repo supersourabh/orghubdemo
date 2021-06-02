@@ -179,9 +179,11 @@ function SellerScreen(props){
                     <label htmlFor="catagory">
                         Catagory :
                     </label>
-                    <input type="text" name="catagory" id="catagory" value={catagory} onChange={(e) =>setCatagory(e.target.value)}>
-
-                    </input>
+                    <select value={catagory} onChange={(e)=>setCatagory(e.target.value)}>
+                        <option selected value="Vegitable">Vegitable</option>
+                        <option value="Fruits">Fruits</option>
+                        <option value="Spices">Spices</option>
+                    </select>
                 </li>
                 <li>
                     <label htmlFor="countInStock">
@@ -211,6 +213,9 @@ function SellerScreen(props){
     }
 
         <div className="product-list">
+
+        <button className=" button" id="addProduct" onClick={()=>openModal({})}>Add-Product</button>
+
             <table className='table'>
                 <thead>
                     <tr>
@@ -256,7 +261,6 @@ function SellerScreen(props){
            
                
             </table>
-            <button className=" button" id="addProduct" onClick={()=>openModal({})}>Add-Product</button>
             
 
         </div>
