@@ -1,23 +1,26 @@
 {
   "files": {
-    "main.css": "/orghubdemo/static/css/main.7f566947.chunk.css",
-    "main.js": "/orghubdemo/static/js/main.2480c3ba.chunk.js",
-    "main.js.map": "/orghubdemo/static/js/main.2480c3ba.chunk.js.map",
-    "runtime-main.js": "/orghubdemo/static/js/runtime-main.9d55a43d.js",
-    "runtime-main.js.map": "/orghubdemo/static/js/runtime-main.9d55a43d.js.map",
-    "static/js/2.66e57f6e.chunk.js": "/orghubdemo/static/js/2.66e57f6e.chunk.js",
-    "static/js/2.66e57f6e.chunk.js.map": "/orghubdemo/static/js/2.66e57f6e.chunk.js.map",
-    "static/js/3.12d7283f.chunk.js": "/orghubdemo/static/js/3.12d7283f.chunk.js",
-    "static/js/3.12d7283f.chunk.js.map": "/orghubdemo/static/js/3.12d7283f.chunk.js.map",
+    "main.css": "/orghubdemo/static/css/main.831e9154.chunk.css",
+    "main.js": "/orghubdemo/static/js/main.2e680707.chunk.js",
+    "main.js.map": "/orghubdemo/static/js/main.2e680707.chunk.js.map",
+    "runtime-main.js": "/orghubdemo/static/js/runtime-main.98b5e556.js",
+    "runtime-main.js.map": "/orghubdemo/static/js/runtime-main.98b5e556.js.map",
+    "static/js/2.fba35b7e.chunk.js": "/orghubdemo/static/js/2.fba35b7e.chunk.js",
+    "static/js/2.fba35b7e.chunk.js.map": "/orghubdemo/static/js/2.fba35b7e.chunk.js.map",
+    "static/js/3.6ded9350.chunk.js": "/orghubdemo/static/js/3.6ded9350.chunk.js",
+    "static/js/3.6ded9350.chunk.js.map": "/orghubdemo/static/js/3.6ded9350.chunk.js.map",
     "index.html": "/orghubdemo/index.html",
-    "static/css/main.7f566947.chunk.css.map": "/orghubdemo/static/css/main.7f566947.chunk.css.map",
-    "static/js/2.66e57f6e.chunk.js.LICENSE.txt": "/orghubdemo/static/js/2.66e57f6e.chunk.js.LICENSE.txt",
-    "static/media/index.css": "/orghubdemo/static/media/istockphoto-1128687119-612x612.14cc7df5.jpg"
+    "static/css/main.831e9154.chunk.css.map": "/orghubdemo/static/css/main.831e9154.chunk.css.map",
+    "static/js/2.fba35b7e.chunk.js.LICENSE.txt": "/orghubdemo/static/js/2.fba35b7e.chunk.js.LICENSE.txt",
+    "static/media/fresh-vegetables-logo-359548007A-seeklogo.com.dbb14f20.png": "/orghubdemo/static/media/fresh-vegetables-logo-359548007A-seeklogo.com.dbb14f20.png",
+    "static/media/index.css": "/orghubdemo/static/media/istockphoto-1128687119-612x612.14cc7df5.jpg",
+    "static/media/—Pngtree—neon vegetables fruits_4526853.2260f583.png": "/orghubdemo/static/media/—Pngtree—neon vegetables fruits_4526853.2260f583.png",
+    "static/media/—Pngtree—vector root icon_4155304.752762cd.png": "/orghubdemo/static/media/—Pngtree—vector root icon_4155304.752762cd.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.9d55a43d.js",
-    "static/js/2.66e57f6e.chunk.js",
-    "static/css/main.7f566947.chunk.css",
-    "static/js/main.2480c3ba.chunk.js"
+    "static/js/runtime-main.98b5e556.js",
+    "static/js/2.fba35b7e.chunk.js",
+    "static/css/main.831e9154.chunk.css",
+    "static/js/main.2e680707.chunk.js"
   ]
 }
