@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <meta name="" content="">
+        <title>jio</title>
+       <link rel="stylesheet" href="jio.css" title="" type="" />
+    </head>
+    <body>
+      <div class="grid-container">
+        <header class="header">
+           <div class="brand">
+             <button class=".open" onclick="openMenu()">&#9776;</button>
+             <a href="index.html">OrgHub</a>
+           </div>
+           <div class="header-links">
+             <a href="cart.html">cart</a>
+             <a href="login">login</a>
+           </div>
+        </header>
+        <aside class="sidebar">
+          <h3>shopping cetageries</h3>
+          <button class="sidebar-close-button" onclick="removeMenu()">X</button>
+            <ul class="sidebar-list">
+              <li>
+                <a href="index.html">fruits</a>          
+              </li>
+              <li>
+                  <a href="index.html">vegitables</a>
+              </li>
+              
+            </ul>
+          
+        </aside>
+        
+        <main class="main">
+         <div class="contents">
+          <ul class="products">
+              <li> 
+                <div class="product">
+                    
+                       <img class="product-image"src="images/tomato.jpg" alt="" />
+                    
+                    <div class="product-name">
+                        <a href="product.html">tomato</a>
+                    </div>
+                    <div class="product-brand">
+                       jetpok
+                    </div>
+                    <div class="product-price">
+                     $1
+                    </div>
+                     <div class="product-rating">
+                     4.5 stars (10 reviews)
+                     </div>
+                 </div>  
+              </li>
+              <li> 
+                <div class="product">
+                       <img class="product-image"src="images/tomato.jpg" alt="" />
+                    
+                    <div class="product-name">
+                        <a href="product.html">tomato</a>
+                    </div>
+                    <div class="product-brand">
+                       jetpok
+                    </div>
+                    <div class="product-price">
+                     $1
+                    </div>
+                     <div class="product-rating">
+                     4.5 stars (10 reviews)
+                     </div>
+                 </div>  
+              </li>
+              <li> 
+                <div class="product">
+                       <img class="product-image"src="images/tomato.jpg" alt="" />
+                    
+                    <div class="product-name">
+                        <a href="product.html">tomato</a>
+                    </div>
+                    <div class="product-brand">
+                       jetpok
+                    </div>
+                    <div class="product-price">
+                     $1
+                    </div>
+                     <div class="product-rating">
+                     4.5 stars (10 reviews)
+                     </div>
+                 </div>  
+              </li>
+           
+         </div> 
+          </ul>
+        </main>
+        <footer class="footer">
+          all rights reserved
+        </footer>
+      </div>
+    <script>
+      
+      function openMenu(){
+            document.querySelector(".sidebar").classList.add("open");
+
+      }
+          function removeMenu() {
+            document.querySelector(".sidebar").classList.remove("open");
+            }
+     
+
+    </script>
+    
+        
+   
+    </body>
+</html>
