@@ -1712,8 +1712,7 @@ font-weight: 800;
     width: 100%;
     height: 100%;
     background-color: #d993ee;
-    z-index: -1;
-    clip-path: circle(91.5% at 51% 2%);
+    z-index: -5;
     background: linear-gradient(90deg , #bc81d8 , #db4eee);
   }
 
@@ -1743,6 +1742,7 @@ font-weight: 800;
     background: -webkit-linear-gradient(rgb(183, 212, 116), rgb(122, 233, 155));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    z-index: 10000;
     
     
     
