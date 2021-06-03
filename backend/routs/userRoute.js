@@ -54,7 +54,7 @@ router.post('/register',expressAsyncHandler( async (req,res)=>{
         email : req.body.email,
         password :req.body.password ,
         profileImage : {
-            data: fs.readFileSync(path.join(__dirname + '/uploads/profile/' + "thumbhil.png")),
+            data: fs.readFileSync(path.join(__dirname + '/uploads/profile/' + "thumbil.png")),
             contentType: 'image/png'
         }
     });
