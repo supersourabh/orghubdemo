@@ -5,10 +5,7 @@ import mongoose from 'mongoose';
 import {  isAuth } from '../util';
 import User from '../models/usermodel';
 import fast2sms from 'fast-two-sms'
-const accountSid = process.env.TWILIO_ACCOUNT_SID;
-const authToken = process.env.TWILIO_AUTH_TOKEN;
-const twilio = require('twilio');
-var client = new twilio(accountSid, authToken);
+
 
 
 const orderRouter =express.Router();
@@ -60,16 +57,9 @@ orderRouter.post('/' ,isAuth, expressAsyncHandler(async (req , res )=>{
                 createdOrder.paymentSms = "success"
                 console.log(res);
 
-                 
+            
                 
-                client.messages.create({
-                     body: `Dear ${user.name} ,your order of Rs ${createdOrder.totalPrice} is placed and your order id is ${createdOrder._id} ,please keep this message for future..`,
-                     from: '+15595308121',
-                     to: `+91${user.phoneNumber}`
-                   })
-                  .then(message => console.log(message.sid))
-                  .then(error=>console.log(error))
-
+    
                   
             }else{
                 console.log("sry")
