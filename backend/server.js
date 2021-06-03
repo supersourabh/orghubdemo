@@ -32,6 +32,7 @@ app.use(bodyParser())
 
 app.use("/uploads" ,express.static(path.join(__dirname,"uploads")))
 
+
 app.use(express.static(path.join(__dirname,"/public")))
 
 app.use(cors())
@@ -74,6 +75,12 @@ app.use("/api/razorpay" , rezorRouter)
 app.use((err ,req ,res ,next)=>{
     res.status(500).send({message : err.message})
 })
+
+if(process.env.NODE_ENV === "production"){
+
+    app.use(express.static("frontend/build"))
+
+}
 
 const httpServer =http.Server(app)
 const io = socket(httpServer)

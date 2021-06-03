@@ -8,7 +8,7 @@ import fast2sms from 'fast-two-sms'
 const accountSid = process.env.TWILIO_ACCOUNT_SID;
 const authToken = process.env.TWILIO_AUTH_TOKEN;
 const twilio = require('twilio');
-var client = new twilio("AC52a9193c1ae0b3a6799d64f4a0a4b99e", "836cdace572257f77de71f7baa2dbb0a");
+var client = new twilio(accountSid, authToken);
 
 
 const orderRouter =express.Router();
