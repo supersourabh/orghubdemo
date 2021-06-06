@@ -121,12 +121,12 @@ adminRouter.post("/ads/delete/:id" , expressAsyncHandler( async (req , res) =>{
     }   
 }));  
 
-adminRouter.use(express.static(path.join(__dirname,"/uploads/ads")))
+adminRouter.use(express.static(path.join(__dirname,"/uploads/ads/")))
 
 const storage =multer.diskStorage({
     
     destination :function(req ,file,cb){
-        cb(null , path.join(__dirname, '/uploads/ads'))
+        cb(null , path.join(__dirname, '/uploads/ads/'))
     },
     filename :function(req,file,cb){
     
@@ -140,7 +140,7 @@ const upload = multer({
 }).single("file")
 
 
-adminRouter.post("/ads/create" ,upload, expressAsyncHandler( async (req , res) =>{
+adminRouter.post("/ads/create" ,upload,isAdmin,isAuth, expressAsyncHandler( async (req , res) =>{
     const file = req.file
 
     const ads = new Ads({

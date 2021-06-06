@@ -13,7 +13,7 @@ import Delete from '../icons/Delete'
 
 export default function DashboardScreen(props) {
 
-    const [userChart, setUserChart] = useState(true)
+    const [userChart, setUserChart] = useState(false)
     const [sellerChart, setSellerChart] = useState(false)
     const [productChart, setProductChart] = useState(false)
     const [ordersChart, setOrdersChart] = useState(false)
@@ -40,13 +40,8 @@ export default function DashboardScreen(props) {
 
     useEffect(() => {
 
-        if(success ){
-            setAdsOpen(false)
-            setUserChart(true)
-        }
-        
-        
-        
+        setUserChart(true)
+     
     }, [adsOpen, dispatch, success, successDelete])
 
     function image(ads){
@@ -136,11 +131,9 @@ export default function DashboardScreen(props) {
      
     }
     const adsOpenHandler =(e)=>{
-
         e.preventDefault()
         setAdsOpen(!adsOpen)
         
-
     }
     const adsDeleteHandler =(id)=>{
 
@@ -210,6 +203,8 @@ export default function DashboardScreen(props) {
                     catagory?
                    < DoughnutCatagoryChart/>:''
                 }
+            {
+                ads ?
                 <div className="ads">
 
                     <div className="button-open">
@@ -221,7 +216,7 @@ export default function DashboardScreen(props) {
 
                 
                 {
-                    adsOpen?
+                    adsOpen ?
                     <div className="adsForm">
 
 
@@ -273,7 +268,7 @@ export default function DashboardScreen(props) {
                 }
                 {
                 loadingAds ?<LoadingBox></LoadingBox>:
-                errorAds || errorDelete ?<MessageBox varient="danger">{error.message?error.message:errorDelete.message}</MessageBox>:
+                errorAds || errorDelete ?<MessageBox varient="danger">{error?error:errorDelete}</MessageBox>:
                 adsProducts.map(ads =>
                             
                             <div className="mainAds" >
@@ -305,9 +300,12 @@ export default function DashboardScreen(props) {
                 }
                 
                 </div>
+                
+                :""}
               
 
             </div>
+            
             
         </div>
     )
