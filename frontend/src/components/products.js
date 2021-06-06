@@ -8,27 +8,27 @@ export default function Products(props) {
 
   const { product } = props;
 
-  function image(){
+  function image(product){
     var binary = '';
     var bytes = [].slice.call(new Uint8Array(product.image.data.data));
     bytes.forEach((b) => binary += String.fromCharCode(b));
     return window.btoa(binary);
 }
 
-  const img =image()
+  const img =image(product)
 
 
   const mimeType = product.image.contentType
 
   return <div className="product">
     
-    <Link to={ '/Products/' + product._id } >
-      <div className="product-image">
+    <div className="product-image">
+      <Link to={ '/Products/' + product._id } >
 
         <img src={`data:${mimeType};base64,${img}`} alt=""/>
 
-      </div>
-    </Link>
+      </Link>
+    </div>
     <div className="product-details">
       <Link to={ '/Products/' + product._id } >
         <div className="product-name">

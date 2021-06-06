@@ -5,7 +5,7 @@ import { imageProductReducer, productDeleteReducer, productDetailsReducer, produ
 import { userDetailsReducer,  userProfileImageReducer, userSigninReducer, userUpdateProfileReducer } from './reducers/userReducers';
 import { userregisterReducer } from './reducers/userReducers';
 import { orderCreateReducer, orderDetailsReducer, orderMineListReducer, orderPayReducer } from './reducers/orderReducers';
-import { orderDeleteReducers, ordersListReducers, userInfoReducers, usersListReducers, usersRemoveReducers } from './reducers/adminReducers';
+import { adsCreateReducers, adsDeleteReducers, adsReducers, orderDeleteReducers, ordersListReducers, userInfoReducers, usersListReducers, usersRemoveReducers } from './reducers/adminReducers';
 
 
 
@@ -13,9 +13,7 @@ const cartItems=localStorage.getItem('cartItems')? JSON.parse(localStorage.getIt
 const userInfo = localStorage.getItem('userInfo')? JSON.parse(localStorage.getItem('userInfo')): null;
 const shipping =localStorage.getItem('shipping')? JSON.parse(localStorage.getItem('shipping')): {} ;
 const payment = localStorage.getItem('payment')? JSON.parse(localStorage.getItem("payment")):"RazorPay payment"
-//const profileImage = localStorage.getItem('profileImage') && JSON.parse(localStorage.getItem("profileImage"))
 
-//console.log("from store" + profileImage)
 
 const initialState={
     cart : {cartItems ,shipping, payment}, userSignin: { userInfo }
@@ -44,6 +42,9 @@ const reducer =combineReducers({
     productLike :productListReducer,
     productImage : imageProductReducer,
     profileImage : userProfileImageReducer,
+    adsServe : adsReducers,
+    adsCreate :adsCreateReducers, 
+    adsDelete : adsDeleteReducers,
 
 })
 

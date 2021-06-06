@@ -53,9 +53,9 @@ orderRouter.post('/' ,isAuth, expressAsyncHandler(async (req , res )=>{
                 
                 var options = {authorization : process.env.f2sKey , message : `Dear ${user.name} your ORGHUB order of price Rs ${ req .body.totalPrice}  placed and your order Id is ${createdOrder._id} ,please keep this message for future reference..thank you `,  numbers : [`${user.phoneNumber}`] } 
                 const res = fast2sms.sendMessage(options)
-                console.log("sms success")
+                
                 createdOrder.paymentSms = "success"
-                console.log(res);
+                
 
             
                 

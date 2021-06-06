@@ -35,8 +35,8 @@ router.post("/new" , upload,isAuth, expressAsyncHandler(async (req , res )=>{
     const file=req.file
     
     const product = new Product({
-        name : req.body. name,
-        price : req.body. price,
+        name : req.body.name,
+        price : req.body.price,
         image: { 
             data: fs.readFileSync(path.join(__dirname + '/uploads/' + file.filename)),
             contentType: 'image/png'

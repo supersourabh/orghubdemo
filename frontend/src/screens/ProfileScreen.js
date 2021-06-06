@@ -3,8 +3,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { detailsUser, updateUserProfile } from '../actions/userActions';
 import LoadingBox from '../components/LoadingBox.js';
 import MessageBox from '../components/MessageBox.js';
-import PlayLoad from '../components/PlayLoad';
 import { USER_DETAILS_UPDATE_RESET } from '../constants/userConstants';
+
 
 export default function ProfileScreen(props) {
 
@@ -51,7 +51,9 @@ export default function ProfileScreen(props) {
     
     }, [dispatch, userInfo._id, user, userInfo.name, userInfo.email, successUpdate, userInfo.phoneNumber, userInfo.seller])
 
-
+   
+      
+      
 
     const changeUserPassword =()=>{
         
@@ -101,8 +103,8 @@ export default function ProfileScreen(props) {
                 {
                     loading ?<div><LoadingBox/></div>:
 
-                    error ? <MessageBox varient ="danger">{error}</MessageBox> :
-                    <>
+                    error ? <MessageBox varient ="danger">{error}</MessageBox> :<>
+                    <div style={{width : 475 ,overflow :"hidden",borderRadius: 50}}>
                       
                         {
                             loadingUpdate && <LoadingBox/>
@@ -114,7 +116,7 @@ export default function ProfileScreen(props) {
                         {
                             successUpdate && <MessageBox varient="success">Profile Updated Successfully ...</MessageBox>
                         }
-                        
+                    </div> 
 
                         <div>
                             <lable htmlFor="name"> Name</lable>
@@ -129,20 +131,20 @@ export default function ProfileScreen(props) {
                         </div>
                         <div>
                             <lable htmlFor="profile"> Profile-Image (upto 500kb)</lable>
-                            <input id="profile"  type ="file" name="profileImage" accept=".jpg" onChange={(e)=>setProfileImage(e.target.files[0])} ></input>
+                            <input id="profile"  type ="file" name="profileImage" accept="images" onChange={(e)=>setProfileImage(e.target.files[0])} ></input>
                         </div>
                         <div>
                             <lable htmlFor="phoneNumber"> Phone-Number(only numbers)</lable>
-                            <input id="phoneNumber"  type ="text" maxLength='10' value={phoneNumber} pattern="[0-9]{10}"  name="phoneNumber"  onChange={(e)=>setPhoneNumber(e.target.value)} ></input>
+                            <input id="phoneNumber"  required type ="text" maxLength='10' minLength='10' placeholder="Enter phone number" pattern="[0-9]{10}"  name="phoneNumber"  onChange={(e)=>setPhoneNumber(e.target.value)} ></input>
                         </div>
 
 
                         <div>
-                            <lable htmlFor="seller"> are you seller</lable>
-                           <select value={seller}  onChange ={(e)=>{setSeller(e.target.value)} }>
-                                <option value="false">NO</option>
-                                <option value="true">YES</option>
-                           </select>
+                            <lable htmlFor="seller"> Are you seller</lable>
+                            <select value={seller}  onChange ={(e)=>{setSeller(e.target.value)} }>
+                                    <option value="false">NO</option>
+                                    <option value="true">YES</option>
+                            </select>
                             
                         </div>
 

@@ -25,6 +25,7 @@ import { useEffect, useState } from 'react';
 import MainScreen from './screens/MainScreen';
 import PaymentScreen from './screens/PaymentScreen';
 import ImageScreen from './screens/ImageScreen';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 
@@ -83,11 +84,12 @@ useEffect(() => {
   };
 
 
- 
+
 
 
   return (
     < BrowserRouter>
+    
       <div className="grid-container">
         <header className="header">
           <div className="brand">
@@ -102,7 +104,12 @@ useEffect(() => {
             
             : ""
           }
-          <Link className="fa fa-fw fa-search" to="#" onClick={searching}></Link>
+          <div>
+
+            <Link className="fa fa-fw fa-search" to="#" onClick={searching}></Link>
+
+          </div>
+
           
           
 
@@ -111,29 +118,37 @@ useEffect(() => {
               <>
               <div className="dropdown">
 
+                  <div>
+                    <b id="profileName">Hi.. {userInfo.name}</b>
+                  </div>
 
-                  <b id="profileName">Hi.. {userInfo.name}</b>
+                  
                   {" "}
-                  <i className="fa fa-chevron-down" ></i>
+                  <i className="fa fa-caret-down" ></i>
 
                   <ul className="dropdown-content">
                     <li>
                       <Link to="/orderHistory" >Order-History</Link>
                     </li>
                     {
-                      userInfo.seller ?
+                      userInfo.seller &&
                         <li>
                           <Link to="/seller" >Your-Products</Link>
-                        </li> : ''
+                        </li> 
                     }
 
 
-                    <li>
-                      <Link to="/profile" >Profile</Link>
+                    <li> 
+                        <Link to="/profile" >Profile</Link>
                     </li>
 
                     <li>
-                      <Link to="/" onClick={signoutHandler}>Sign Out</Link>
+                      
+
+                        <Link to="/" onClick={signoutHandler}>Sign Out</Link>
+
+                     
+
                     </li>
 
 
@@ -141,19 +156,28 @@ useEffect(() => {
                 </div>
                 </>
                 :
-                <Link className="fa fa-fw fa-user" to="/signin">
+                <div>
+                  <Link className="fa fa-fw fa-user" to="/signin">  </Link>
+                </div>
                   
-                 </Link>
+               
               
             }
-            <Link className="fa fa-fw fa-envelope" to ="#" onClick={()=>alert("contact : business@orghubmail.com")}> </Link>
+            <div>
+
+              <a className="fa fa-fw fa-envelope" href={"mailto:business@gmail.com"} style={{cursor:"pointer"}}> </a>
+
+            </div>
+            <div>
+              <Link className="cart-icon fa fa-shopping-cart" to={`/cart`}>   {
+                cartItems.length > 0 &&
+                (<span className='badge'> {cartItems.length} </span>)
+              }
+              </Link>
+            </div>
             
 
-            <Link className="cart-icon fa fa-shopping-cart" to={`/cart`}>   {
-              cartItems.length > 0 &&
-              (<span className='badge'> {cartItems.length} </span>)
-            }
-            </Link>
+            
 
            
             {
@@ -161,7 +185,7 @@ useEffect(() => {
               <div className="dropdown ">
                 <Link to="/" > 
                   <div className="admin-app-dropdown">
-                    <text style={{color:"#fff"}} >admin</text>
+                    <text style={{color:"#fff" ,fontWeight:"bold" , color : "#7bff72"}} >{"_Admin_"}</text>
                     <i style={{color:"#fff"}} className="fa fa-caret-down"></i>               
                   </div>
                  
@@ -229,7 +253,7 @@ useEffect(() => {
 
             <Route path="/signin" component={signinScreen} />
 
-            <Route path="/cart/:id"  component={CartScreen} />
+            <Route path="/cart/:id?" exact={false} component={CartScreen} />
 
             <Route path="/Products/image/:id" exact component={ImageScreen} />
 

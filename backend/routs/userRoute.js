@@ -164,7 +164,9 @@ router.put("/profile", isAuth, upload ,expressAsyncHandler(async (req ,res)=>{
     if( user) {
         user.name = req.body.name || user.name;
         user.email = req.body.email || user.email;
-        user.phoneNumber = req.body.phoneNumber;
+        if(req.body.phoneNumber!==undefined){
+            user.phoneNumber = req.body.phoneNumber
+        }
 
         if(file){
             user.profileImage={
@@ -176,7 +178,7 @@ router.put("/profile", isAuth, upload ,expressAsyncHandler(async (req ,res)=>{
 
         }else{
             user.profileImage={
-                data: fs.readFileSync(path.join(__dirname + '/uploads/profile/' + 'thumbhil.png')),
+                data: fs.readFileSync(path.join(__dirname + '/uploads/profile/' + 'thumbil.png')),
                 contentType: 'image/png'
             }
 
