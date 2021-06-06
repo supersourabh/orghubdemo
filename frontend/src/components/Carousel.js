@@ -34,7 +34,7 @@ export default function ControlledCarousel(props) {
                         src={`data:${ads.media.contentType};base64,${image(ads)}`} 
                         alt={ads.name}
                       />:
-                      <video width="50%" height='300' autoPlay loop   >
+                      <video width="50%" height='300' autoPlay loop controls  >
                         <source src={`data:${ads.media.contentType};base64,${image(ads)}`} type="video/mp4"/>
                       </video> 
                                     

@@ -245,7 +245,7 @@ body{
   display: flex;
   justify-content: space-between;
   flex-direction: row;
-  width: 100%;
+  width: 100rem;
   margin: 1rem;
   padding: 1rem ;
   backdrop-filter: blur(6px);
@@ -261,7 +261,7 @@ body{
   list-style-type: none;
   display: flex;
   justify-content: space-between;
-  width: 50%;
+  width: 100rem;
 }
 
 
