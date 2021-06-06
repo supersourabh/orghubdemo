@@ -140,7 +140,7 @@ const upload = multer({
 }).single("file")
 
 
-adminRouter.post("/ads/create" ,upload,isAdmin,isAuth, expressAsyncHandler( async (req , res) =>{
+adminRouter.post("/ads/create" ,upload, expressAsyncHandler( async (req , res) =>{
     const file = req.file
 
     const ads = new Ads({

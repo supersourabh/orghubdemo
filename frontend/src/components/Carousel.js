@@ -43,8 +43,8 @@ export default function ControlledCarousel(props) {
               </div>
                 
                 <Carousel.Caption>
-                  <h3 style={{color : "green" , fontFamily:"Arial",fontSize:40 ,fontWeight:"bold",textIndent:20}}>{ads.name}</h3>
-                  <p style={{color :"#ffdec6" , fontSize:30 ,fontWeight:"bold"}}>{ads.discription}</p>
+                  <h3 style={{color : "green" , fontFamily:"Arial",fontSize:30 ,fontWeight:"bold",textIndent:20}}>{ads.name}</h3>
+                  <p style={{color :"#fff" , fontSize:25 ,fontWeight:"bold"}}>{ads.discription}</p>
                 </Carousel.Caption>
               </Carousel.Item>
           )
