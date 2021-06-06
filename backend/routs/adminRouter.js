@@ -153,9 +153,10 @@ adminRouter.post("/ads/create" ,upload,isAdmin,isAuth, expressAsyncHandler( asyn
 
      })
 
-     fs.unlinkSync(path.join(__dirname + '/uploads/ads/' + file.filename))
-
+     
      const newAds = await ads.save()
+     
+     fs.unlinkSync(path.join(__dirname + '/uploads/ads/' + file.filename))
 
     if(newAds){
 
